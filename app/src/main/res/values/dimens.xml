@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="banner_height">71dp</dimen>
+    <dimen name="banner_width">411dp</dimen>
+    <dimen name="editView_width">330dp</dimen>
+    <dimen name="editView_height">45dp</dimen>
+    <dimen name="button_createDisk_width">330dp</dimen>
+    <dimen name="button_createDisk_height">45dp</dimen>
+</resources>

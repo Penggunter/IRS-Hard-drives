@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">IRS-Hard-drives</string>
     <string name="main_activity_text">Домашняя страница</string>
-    <string name="search_text">Поиск...</string>
+    <string name="search_text">Поиск…</string>
+    <string name="added_data_text">Добавление данных</string>
+    <string name="creating_disk_text">Создать диск</string>
+    <string name="input_name_text">Введите название…</string>
+    <string name="input_description_text">Введите описание…</string>
+    <string name="input_manufacture_text">Введите производителя…</string>
+    <string name="input_sizeDisk_text">Введите размер диска…</string>
 </resources>

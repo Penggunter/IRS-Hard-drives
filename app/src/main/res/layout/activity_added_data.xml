@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="@dimen/banner_width"
+        android:layout_height="@dimen/banner_height"
+        android:background="@color/darkblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/added_data_text"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/backButtonInAddedActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="409dp"
+        android:layout_height="659dp"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="@dimen/editView_width"
+            android:layout_height="@dimen/editView_height"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/input_name_text"
+            android:maxLength="33"
+            android:textColorHint="@color/darkgrey"
+            app:layout_constraintBottom_toTopOf="@+id/editTextManufacturer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.508" />
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="@dimen/editView_width"
+            android:layout_height="118dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/input_description_text"
+            android:maxLength="120"
+            android:textColorHint="@color/darkgrey"
+            android:gravity="top|left"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCreateDisk"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextManufacturer"
+            android:layout_width="@dimen/editView_width"
+            android:layout_height="@dimen/editView_height"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/input_manufacture_text"
+            android:maxLength="33"
+
+            android:textColorHint="@color/darkgrey"
+            app:layout_constraintBottom_toTopOf="@+id/editTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextSize"
+            android:layout_width="@dimen/editView_width"
+            android:layout_height="@dimen/editView_height"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="@string/input_sizeDisk_text"
+            android:maxLength="33"
+            android:textColorHint="@color/darkgrey"
+            app:layout_constraintBottom_toTopOf="@+id/editTextDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/buttonCreateDisk"
+            android:layout_width="@dimen/button_createDisk_width"
+            android:layout_height="@dimen/button_createDisk_height"
+            android:layout_marginBottom="84dp"
+            android:backgroundTint="@color/darkblue"
+            android:text="@string/creating_disk_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
