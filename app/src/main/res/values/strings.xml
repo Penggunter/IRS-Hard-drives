@@ -4,8 +4,15 @@
     <string name="search_text">Поиск…</string>
     <string name="added_data_text">Добавление данных</string>
     <string name="creating_disk_text">Создать диск</string>
+
     <string name="input_name_text">Введите название…</string>
     <string name="input_description_text">Введите описание…</string>
     <string name="input_manufacture_text">Введите производителя…</string>
     <string name="input_sizeDisk_text">Введите размер диска…</string>
+
+    <string name="description_banner_text">Описание</string>
+    <string name="description_name_text">Название модели</string>
+    <string name="description_size_text">Размер жёсткого диска</string>
+    <string name="description_company_text">Производитель</string>
+    <string name="description_text">Описание жёсткого диска…</string>
 </resources>

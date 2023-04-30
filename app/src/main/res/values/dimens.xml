@@ -6,4 +6,6 @@
     <dimen name="editView_height">45dp</dimen>
     <dimen name="button_createDisk_width">330dp</dimen>
     <dimen name="button_createDisk_height">45dp</dimen>
+
+    <dimen name="size_name_item">24sp</dimen>
 </resources>
