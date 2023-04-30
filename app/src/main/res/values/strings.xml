@@ -17,4 +17,13 @@
     <string name="description_text">Описание жёсткого диска…</string>
 
     <string name="delete_banner_text">Выберите для удаления</string>
+
+    <string name="login_enter_text">Вход</string>
+    <string name="login_inputName_text">Введите имя…</string>
+    <string name="login_inputPassword_text">Введите пароль…</string>
+    <string name="button_enter_text">Вход</string>
+    <string name="login_username_text">Имя пользователя</string>
+    <string name="login_password_text">Пароль</string>
+    <string name="login_forgotPassword_text">Забыли пароль?</string>
+    <string name="login_enterGuest_text">Зайти как гость</string>
 </resources>
