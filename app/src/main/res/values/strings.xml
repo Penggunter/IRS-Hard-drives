@@ -15,4 +15,6 @@
     <string name="description_size_text">Размер жёсткого диска</string>
     <string name="description_company_text">Производитель</string>
     <string name="description_text">Описание жёсткого диска…</string>
+
+    <string name="delete_banner_text">Выберите для удаления</string>
 </resources>
