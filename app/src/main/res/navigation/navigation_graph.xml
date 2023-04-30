@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_graph.xml">
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/loginMenuFragment">
 
+    <fragment
+        android:id="@+id/loginMenuFragment"
+        android:name="com.example.irs_hard_drives.UI.LoginMenuFragment"
+        android:label="LoginMenuFragment" >
+        <action
+            android:id="@+id/action_loginMenuFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.irs_hard_drives.UI.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_deleteItemFragment"
+            app:destination="@id/deleteItemFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_descriptionItemFragment"
+            app:destination="@id/descriptionItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.example.irs_hard_drives.UI.AddItemFragment"
+        android:label="AddItemFragment" >
+        <action
+            android:id="@+id/action_addItemFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteItemFragment"
+        android:name="com.example.irs_hard_drives.UI.DeleteItemFragment"
+        android:label="DeleteItemFragment" >
+        <action
+            android:id="@+id/action_deleteItemFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/descriptionItemFragment"
+        android:name="com.example.irs_hard_drives.UI.DescriptionItemFragment"
+        android:label="DescriptionItemFragment" >
+        <action
+            android:id="@+id/action_descriptionItemFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>
