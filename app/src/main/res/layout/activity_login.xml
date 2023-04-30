@@ -7,7 +7,7 @@
     android:background="@color/darkblue">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/bannerLoginMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/enterUsername"
         android:layout_width="@dimen/editView_width"
         android:layout_height="@dimen/editView_height"
         android:layout_marginTop="68dp"
@@ -32,10 +32,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/bannerLoginMenu" />
 
     <EditText
-        android:id="@+id/editTextName2"
+        android:id="@+id/enterPassword"
         android:layout_width="@dimen/editView_width"
         android:layout_height="@dimen/editView_height"
         android:layout_marginTop="68dp"
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/enterUsername" />
 
     <Button
         android:id="@+id/buttonToLogin"
@@ -56,11 +56,11 @@
         android:backgroundTint="@color/gold"
         android:text="@string/button_enter_text"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/forgotPasswordTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName2" />
+        app:layout_constraintTop_toBottomOf="@+id/enterPassword" />
 
     <TextView
         android:id="@+id/usernameTextView"
@@ -68,11 +68,11 @@
         android:layout_height="wrap_content"
         android:text="@string/login_username_text"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/editTextName"
+        app:layout_constraintBottom_toTopOf="@+id/enterUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/bannerLoginMenu"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -81,15 +81,15 @@
         android:layout_height="wrap_content"
         android:text="@string/login_password_text"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/editTextName2"
+        app:layout_constraintBottom_toTopOf="@+id/enterPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/enterUsername"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/forgotPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -97,13 +97,13 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintBottom_toTopOf="@+id/enterGuestTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/enterGuestTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
