@@ -2,6 +2,7 @@ package com.example.irs_hard_drives.data.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -9,7 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 public class HDDataBaseHelper extends SQLiteOpenHelper {
-    private Context context;
+    private final Context context;
 
     private static final String DATABASE_NAME = "HardDiskDrive.bd";
     private static final int DATABASE_VERSION = 1;
@@ -29,11 +30,11 @@ public class HDDataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAME + "TEXT, " +
-                COLUMN_COMPANY + "TEXT, " +
-                COLUMN_SIZE + "INTEGER, " +
-                COLUMN_DESCRIPTION + "TEXT" +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME + " TEXT, " +
+                COLUMN_COMPANY + " TEXT, " +
+                COLUMN_SIZE + " TEXT, " +
+                COLUMN_DESCRIPTION + " TEXT" +
                 ");";
         db.execSQL(query);
     }
@@ -44,7 +45,7 @@ public class HDDataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addHardDisk(String name, String company, int size, String description) {
+    public void addHardDisk(String name, String company, String size, String description) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -60,5 +61,15 @@ public class HDDataBaseHelper extends SQLiteOpenHelper {
         } else {
             Toast.makeText(context, "Успешно добавлено", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public Cursor readAllData() {
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 }
