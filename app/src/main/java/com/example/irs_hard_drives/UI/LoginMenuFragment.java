@@ -52,7 +52,8 @@ public class LoginMenuFragment extends Fragment {
         toLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkLogin(v);
+                if(checkLogin(v))
+                    Navigation.findNavController(view).navigate(R.id.action_loginMenuFragment_to_mainFragment);
             }
         });
 
@@ -60,7 +61,7 @@ public class LoginMenuFragment extends Fragment {
         enterGuestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Navigation.findNavController(view).navigate(R.id.action_loginMenuFragment_to_questFragment);
             }
         });
 
@@ -73,7 +74,6 @@ public class LoginMenuFragment extends Fragment {
 
         if (username.equals(loginData) && password.equals(passwordData)) {
             Log.d("Login", "Всё верно");
-            Navigation.findNavController(view).navigate(R.id.action_loginMenuFragment_to_mainFragment);
             return true;
         }
 

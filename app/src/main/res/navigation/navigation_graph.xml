@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_loginMenuFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginMenuFragment_to_questFragment"
+            app:destination="@id/questFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -51,4 +54,8 @@
             android:id="@+id/action_descriptionItemFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/questFragment"
+        android:name="com.example.irs_hard_drives.UI.QuestFragment"
+        android:label="QuestFragment" />
 </navigation>
