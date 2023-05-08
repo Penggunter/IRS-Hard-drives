@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/backButtonInAddedActivity"
+            android:id="@+id/backButtonFromDescriptionInActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/descriptionSize_item" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/description_item"
         android:layout_width="371dp"
         android:layout_height="454dp"
         android:text="@string/description_text"

@@ -1,10 +1,12 @@
 package com.example.irs_hard_drives.UI;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +49,13 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
             public void onClick(View v) {
                 Log.d("Item recycleView", (String)holder.titleName.getText());
 
+                Bundle bundle = new Bundle();
+                bundle.putString("HardDisk_Name_Information", hardDisk.getName());
+                bundle.putString("HardDisk_Size_Information", hardDisk.getSize());
+                bundle.putString("HardDisk_Company_Information", hardDisk.getCompany());
+                bundle.putString("HardDisk_Description_Information", hardDisk.getDescription());
+
+                Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_descriptionItemFragment, bundle);
             }
         });
     }
