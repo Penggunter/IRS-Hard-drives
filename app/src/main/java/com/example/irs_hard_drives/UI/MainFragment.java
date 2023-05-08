@@ -25,13 +25,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainFragment extends Fragment {
-    ImageView addButton;
-    ImageView deleteButton;
+    private ImageView addButton;
+    private ImageView deleteButton;
 
-    RecyclerView recyclerView;
-    HDDataBaseHelper hardDiskDB;
-    List<HardDiskData> hardDiskList;
-    AdapterRecyclerView adapterRecyclerView;
+    private RecyclerView recyclerView;
+    private HDDataBaseHelper hardDiskDB;
+    private ArrayList<HardDiskData> hardDiskList;
+    private AdapterRecyclerView adapterRecyclerView;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +53,12 @@ public class MainFragment extends Fragment {
         recyclerView.setAdapter(adapterRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
         /* Переход*/
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
                 Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_addItemFragment);
             }
         });
@@ -65,6 +67,7 @@ public class MainFragment extends Fragment {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_deleteItemFragment);
             }
         });
@@ -72,7 +75,7 @@ public class MainFragment extends Fragment {
         return view;
     }
 
-    void storeDataInArray() {
+    private void storeDataInArray() {
         hardDiskDB = new HDDataBaseHelper(getContext());
         Cursor cursor = hardDiskDB.readAllData();
         if(cursor.getCount() == 0)
