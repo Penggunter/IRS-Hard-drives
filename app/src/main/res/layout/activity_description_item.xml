@@ -54,17 +54,6 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <TextView
-        android:id="@+id/descriptionSize_item"
-        android:layout_width="200dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/description_size_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionName_item" />
-
-    <TextView
         android:id="@+id/descriptionCompany_item"
         android:layout_width="200dp"
         android:layout_height="20dp"
@@ -73,7 +62,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionSize_item" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionName_item" />
+
+    <TextView
+
+        android:id="@+id/descriptionSize_item"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/description_size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionCompany_item" />
 
     <TextView
         android:id="@+id/description_item"
@@ -84,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionCompany_item"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionSize_item"
         app:layout_constraintVertical_bias="0.558" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
