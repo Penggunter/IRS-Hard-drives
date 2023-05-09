@@ -42,7 +42,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:id="@+id/buttonExtraMenuInMainActivity"
+            android:id="@+id/buttonExitInMainActivity"
             android:layout_width="34dp"
             android:layout_height="35dp"
             android:layout_marginStart="16dp"
@@ -76,7 +76,7 @@
 
             app:layout_constraintEnd_toStartOf="@+id/buttonAddedDataInMainActivity"
             app:layout_constraintHorizontal_bias="0.016"
-            app:layout_constraintStart_toEndOf="@+id/buttonExtraMenuInMainActivity"
+            app:layout_constraintStart_toEndOf="@+id/buttonExitInMainActivity"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

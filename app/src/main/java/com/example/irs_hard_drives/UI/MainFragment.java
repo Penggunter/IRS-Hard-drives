@@ -26,6 +26,7 @@ import java.util.List;
 
 public class MainFragment extends Fragment {
     private ImageView addButton;
+    private ImageView exitButton;
 
     private RecyclerView recyclerView;
     private HDDataBaseHelper hardDiskDB;
@@ -42,6 +43,8 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_main, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerViewInMainPage);
+        addButton = view.findViewById(R.id.buttonAddedDataInMainActivity);
+        exitButton = view.findViewById(R.id.buttonExitInMainActivity);
 
         hardDiskList = new ArrayList<>();
 
@@ -52,15 +55,18 @@ public class MainFragment extends Fragment {
         recyclerView.setAdapter(adapterRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        addButton = view.findViewById(R.id.buttonAddedDataInMainActivity);
-
-
         /* Переход*/
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
                 Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_addItemFragment);
+            }
+        });
+        /* Кнопка выхода */
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_loginMenuFragment);
             }
         });
 

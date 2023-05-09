@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_mainFragment_to_descriptionItemFragment"
             app:destination="@id/descriptionItemFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginMenuFragment"
+            app:destination="@id/loginMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/addItemFragment"
@@ -50,6 +53,9 @@
         <action
             android:id="@+id/action_questFragment_to_questDescriptionFragment"
             app:destination="@id/questDescriptionFragment" />
+        <action
+            android:id="@+id/action_questFragment_to_loginMenuFragment"
+            app:destination="@id/loginMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/questDescriptionFragment"

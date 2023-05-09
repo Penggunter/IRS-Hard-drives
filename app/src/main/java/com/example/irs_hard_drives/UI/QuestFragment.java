@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
@@ -21,6 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuestFragment extends Fragment {
+    ImageView exitButton;
+
     RecyclerView recyclerView;
     HDDataBaseHelper hardDiskDB;
     List<HardDiskData> hardDiskList;
@@ -30,7 +33,6 @@ public class QuestFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_guest, container, false);
@@ -38,6 +40,7 @@ public class QuestFragment extends Fragment {
         hardDiskList = new ArrayList<>();
 
         recyclerView = view.findViewById(R.id.recyclerViewInGuestPage);
+        exitButton = view.findViewById(R.id.buttonExitGuestInMainActivity);
 
         storeDataInArray();
 
@@ -45,6 +48,14 @@ public class QuestFragment extends Fragment {
         adapterRecyclerView.status = 2;
         recyclerView.setAdapter(adapterRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        /* Кнопка выхода */
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_questFragment_to_loginMenuFragment);
+            }
+        });
 
         return view;
     }
