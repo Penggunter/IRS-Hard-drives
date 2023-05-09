@@ -1,17 +1,33 @@
 package com.example.irs_hard_drives.data;
 
 public class HardDiskData {
+    private int id;
     private String name;
     private String company;
     private String size;
     private String description;
 
     HardDiskData(){}
+    public HardDiskData(int id, String name, String company, String size, String description){
+        this.id = id;
+        this.name = name;
+        this.company = company;
+        this.size = size;
+        this.description = description;
+    }
     public HardDiskData(String name, String company, String size, String description){
         this.name = name;
         this.company = company;
         this.size = size;
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {

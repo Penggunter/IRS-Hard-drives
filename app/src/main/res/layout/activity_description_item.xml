@@ -79,13 +79,24 @@
     <TextView
         android:id="@+id/description_item"
         android:layout_width="371dp"
-        android:layout_height="454dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="36dp"
         android:text="@string/description_text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionSize_item"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionSize_item" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="145dp"
+        android:layout_height="46dp"
+        android:backgroundTint="@color/darkblue"
+        android:text="Удалить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_item"
+        app:layout_constraintVertical_bias="0.335" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

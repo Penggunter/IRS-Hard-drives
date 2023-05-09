@@ -26,7 +26,6 @@ import java.util.List;
 
 public class MainFragment extends Fragment {
     private ImageView addButton;
-    private ImageView deleteButton;
 
     private RecyclerView recyclerView;
     private HDDataBaseHelper hardDiskDB;
@@ -42,16 +41,18 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main, container, false);
 
-        hardDiskList = new ArrayList<>();
-
-        addButton = view.findViewById(R.id.buttonAddedDataInMainActivity);
         recyclerView = view.findViewById(R.id.recyclerViewInMainPage);
+
+        hardDiskList = new ArrayList<>();
 
         storeDataInArray();
 
         adapterRecyclerView = new AdapterRecyclerView(getContext(), hardDiskList);
+        adapterRecyclerView.status = 1;
         recyclerView.setAdapter(adapterRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        addButton = view.findViewById(R.id.buttonAddedDataInMainActivity);
 
 
         /* Переход*/
@@ -60,15 +61,6 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_addItemFragment);
-            }
-        });
-
-        deleteButton = view.findViewById(R.id.buttonDeleteDataInMainActivity);
-        deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_deleteItemFragment);
             }
         });
 
@@ -81,7 +73,12 @@ public class MainFragment extends Fragment {
         if(cursor.getCount() == 0)
             return;
         while (cursor.moveToNext()){
-            HardDiskData hardDisk = new HardDiskData(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            HardDiskData hardDisk = new HardDiskData(cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4));
+            Log.d("ID " + cursor.getString(1) + " ",  String.valueOf(cursor.getInt(0)));
             hardDiskList.add(hardDisk);
         }
     }

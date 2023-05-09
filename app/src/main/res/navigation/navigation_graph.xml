@@ -24,9 +24,6 @@
             android:id="@+id/action_mainFragment_to_addItemFragment"
             app:destination="@id/addItemFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_deleteItemFragment"
-            app:destination="@id/deleteItemFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_descriptionItemFragment"
             app:destination="@id/descriptionItemFragment" />
     </fragment>
@@ -36,14 +33,6 @@
         android:label="AddItemFragment" >
         <action
             android:id="@+id/action_addItemFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/deleteItemFragment"
-        android:name="com.example.irs_hard_drives.UI.DeleteItemFragment"
-        android:label="DeleteItemFragment" >
-        <action
-            android:id="@+id/action_deleteItemFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
     <fragment
@@ -57,5 +46,9 @@
     <fragment
         android:id="@+id/questFragment"
         android:name="com.example.irs_hard_drives.UI.QuestFragment"
-        android:label="QuestFragment" />
+        android:label="QuestFragment" >
+        <action
+            android:id="@+id/action_questFragment_to_descriptionItemFragment"
+            app:destination="@id/descriptionItemFragment" />
+    </fragment>
 </navigation>

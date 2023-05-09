@@ -42,6 +42,7 @@ public class QuestFragment extends Fragment {
         storeDataInArray();
 
         adapterRecyclerView = new AdapterRecyclerView(getContext(), hardDiskList);
+        adapterRecyclerView.status = 2;
         recyclerView.setAdapter(adapterRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

@@ -1,5 +1,6 @@
 package com.example.irs_hard_drives.UI;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,11 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.irs_hard_drives.R;
 import com.example.irs_hard_drives.data.HardDiskData;
+import com.example.irs_hard_drives.data.database.HDDataBaseHelper;
 
 import java.util.List;
 
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolder> {
-    public int status = 0;
+    public int status;
 
     private Context context;
     private final LayoutInflater inflater;
@@ -39,30 +41,41 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         return new ViewHolder(view);
     }
     @Override
-    public void onBindViewHolder(AdapterRecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(AdapterRecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
+        HardDiskData hardDisk = hardDiskList.get(position);
+        holder.titleName.setText(hardDisk.getName());
+        holder.companyName.setText(hardDisk.getCompany());
+        holder.sizeHD.setText(String.valueOf(hardDisk.getSize()));
 
         holder.headerView.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-                if(status == 0) {
-                    Log.d("Item recycleView", (String)holder.titleName.getText());
-                    HardDiskData hardDisk = hardDiskList.get(position);
-                    holder.titleName.setText(hardDisk.getName());
-                    holder.companyName.setText(hardDisk.getCompany());
-                    holder.sizeHD.setText(String.valueOf(hardDisk.getSize()));
+                if(status == 1) {
+                    Log.d("Id item recycleView", String.valueOf(hardDisk.getId()));
 
                     Bundle bundle = new Bundle();
+                    bundle.putInt("HardDisk_Id_Information", hardDisk.getId());
                     bundle.putString("HardDisk_Name_Information", hardDisk.getName());
                     bundle.putString("HardDisk_Size_Information", hardDisk.getSize());
                     bundle.putString("HardDisk_Company_Information", hardDisk.getCompany());
                     bundle.putString("HardDisk_Description_Information", hardDisk.getDescription());
 
                     Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_descriptionItemFragment, bundle);
-                } else if (status == 1) {
-                    Log.d("Item recycleView", (String)holder.titleName.getText());
+                } else if(status == 2) {
+                    Log.d("Id item recycleView", String.valueOf(hardDisk.getId()));
+
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("HardDisk_Id_Information", hardDisk.getId());
+                    bundle.putString("HardDisk_Name_Information", hardDisk.getName());
+                    bundle.putString("HardDisk_Size_Information", hardDisk.getSize());
+                    bundle.putString("HardDisk_Company_Information", hardDisk.getCompany());
+                    bundle.putString("HardDisk_Description_Information", hardDisk.getDescription());
+
+                    Navigation.findNavController(v).navigate(R.id.action_questFragment_to_descriptionItemFragment, bundle);
                 }
+
             }
         });
     }

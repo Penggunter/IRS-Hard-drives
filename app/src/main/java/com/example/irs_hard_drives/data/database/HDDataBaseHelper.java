@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -71,5 +72,16 @@ public class HDDataBaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+    public void deleteOneRow(int row_id) {
+        Log.d("ID FOR DELETE", String.valueOf(row_id));
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[] {String.valueOf(row_id)});
+
+        if (result == -1) {
+            Toast.makeText(context, "Ошибка при удалении", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(context, "Успешно удалено", Toast.LENGTH_LONG).show();
+        }
     }
 }
