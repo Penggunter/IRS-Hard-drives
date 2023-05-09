@@ -67,13 +67,13 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
                     Log.d("Id item recycleView", String.valueOf(hardDisk.getId()));
 
                     Bundle bundle = new Bundle();
-                    bundle.putInt("HardDisk_Id_Information", hardDisk.getId());
-                    bundle.putString("HardDisk_Name_Information", hardDisk.getName());
-                    bundle.putString("HardDisk_Size_Information", hardDisk.getSize());
-                    bundle.putString("HardDisk_Company_Information", hardDisk.getCompany());
-                    bundle.putString("HardDisk_Description_Information", hardDisk.getDescription());
+                    bundle.putInt("guest_HardDisk_Id_Information", hardDisk.getId());
+                    bundle.putString("guest_HardDisk_Name_Information", hardDisk.getName());
+                    bundle.putString("guest_HardDisk_Size_Information", hardDisk.getSize());
+                    bundle.putString("guest_HardDisk_Company_Information", hardDisk.getCompany());
+                    bundle.putString("guest_HardDisk_Description_Information", hardDisk.getDescription());
 
-                    Navigation.findNavController(v).navigate(R.id.action_questFragment_to_descriptionItemFragment, bundle);
+                    Navigation.findNavController(v).navigate(R.id.action_questFragment_to_questDescriptionFragment, bundle);
                 }
 
             }

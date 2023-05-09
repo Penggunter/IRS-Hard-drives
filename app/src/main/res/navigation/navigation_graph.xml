@@ -48,7 +48,15 @@
         android:name="com.example.irs_hard_drives.UI.QuestFragment"
         android:label="QuestFragment" >
         <action
-            android:id="@+id/action_questFragment_to_descriptionItemFragment"
-            app:destination="@id/descriptionItemFragment" />
+            android:id="@+id/action_questFragment_to_questDescriptionFragment"
+            app:destination="@id/questDescriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questDescriptionFragment"
+        android:name="com.example.irs_hard_drives.UI.QuestDescriptionFragment"
+        android:label="QuestDescriptionFragment" >
+        <action
+            android:id="@+id/action_questDescriptionFragment_to_questFragment"
+            app:destination="@id/questFragment" />
     </fragment>
 </navigation>
