@@ -15,6 +15,8 @@
         android:background="@color/grey"
         android:hint="@string/search_text"
         android:maxLength="20"
+        android:visibility="invisible"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bannerMainMenu" />
@@ -43,14 +45,15 @@
 
         <ImageView
             android:id="@+id/buttonExitInMainActivity"
-            android:layout_width="34dp"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.512"
-            app:srcCompat="@android:drawable/ic_menu_agenda" />
+            app:srcCompat="?attr/homeAsUpIndicator" />
 
         <ImageView
             android:id="@+id/buttonAddedDataInMainActivity"
@@ -75,9 +78,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
 
             app:layout_constraintEnd_toStartOf="@+id/buttonAddedDataInMainActivity"
-            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintHorizontal_bias="0.157"
             app:layout_constraintStart_toEndOf="@+id/buttonExitInMainActivity"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.477" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
